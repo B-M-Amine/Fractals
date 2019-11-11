@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="600.0" stroke="BLACK" strokeType="INSIDE" width="80.0">
+         <effect>
+            <InnerShadow choke="0.63" color="#0d0d0d" height="68.44" radius="29.2725" width="50.65" />
+         </effect></Rectangle>
+      <Button fx:id="defC" layoutX="13.0" layoutY="15.0" mnemonicParsing="false" onAction="#showC" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: #535353;" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="https://i.imgur.com/dHCd7z1.png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Button>
+      <Ellipse layoutX="40.0" layoutY="256.0" radiusX="27.0" radiusY="28.0" stroke="BLACK" strokeDashOffset="2.0" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeType="OUTSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#979797" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Ellipse>
+      <Pane fx:id="pane" layoutX="80.0" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <Pane fx:id="Cpane" layoutX="163.0" layoutY="24.0" prefHeight="560.0" prefWidth="274.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="560.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="274.0">
+                     <effect>
+                        <InnerShadow choke="0.63" color="#0d0d0d" height="68.44" radius="29.2725" width="50.65" />
+                     </effect>
+                  </Rectangle>
+                  <Button fx:id="cancel" layoutX="103.0" layoutY="470.0" mnemonicParsing="false" onAction="#refresh" prefHeight="36.0" prefWidth="64.0" style="-fx-background-color: #535353;" text="Annuler" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow height="15.07" radius="7.035" width="15.07" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="valider" layoutX="103.0" layoutY="470.0" mnemonicParsing="false" onAction="#refresh" prefHeight="36.0" prefWidth="64.0" style="-fx-background-color: #535353;" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow height="15.07" radius="7.035" width="15.07" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <TextField fx:id="reel" layoutX="77.0" layoutY="100.0" prefHeight="25.0" prefWidth="64.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="imaginaire" layoutX="163.0" layoutY="100.0" prefHeight="25.0" prefWidth="64.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <Label layoutX="144.0" layoutY="93.0" prefHeight="36.0" prefWidth="36.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="235.0" layoutY="93.0" prefHeight="36.0" prefWidth="36.0" text="i" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="s1" blockIncrement="100.0" layoutX="29.0" layoutY="166.0" majorTickUnit="200.0" max="2000.0" minorTickCount="5" prefHeight="37.0" prefWidth="212.0" showTickLabels="true" showTickMarks="true" value="200.0">
+                     <tooltip>
+                        <Tooltip graphicTextGap="0.0" text="Nombre maximal d'itérations avant de déterminer que la fonction diverge pour le C donné.Un grand nombre d'itérations donne un meilleur rendu mais peut entrainer un long temps d'execution.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Slider>
+                  <Label layoutX="29.0" layoutY="94.0" prefHeight="36.0" prefWidth="53.0" text="C =" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="145.0" prefHeight="17.0" prefWidth="149.0" text="Nombre d'itérations :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="prog" layoutX="23.0" layoutY="521.0" prefHeight="18.0" prefWidth="224.0" progress="0.0" />
+                  <Label layoutX="29.0" layoutY="205.0" prefHeight="17.0" prefWidth="149.0" text="Bornes :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="s3" blockIncrement="50.0" layoutX="29.0" layoutY="418.0" majorTickUnit="400.0" max="4000.0" min="200.0" minorTickCount="100" prefHeight="37.0" prefWidth="212.0" showTickLabels="true" showTickMarks="true" value="600.0">
+                     <tooltip>
+                        <Tooltip graphicTextGap="0.0" text="La résolution de l'image, une haute résolution donne un meilleur rendu mais peut entrainer un long temps d'execution.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Slider>
+                  <Label layoutX="29.0" layoutY="394.0" prefHeight="20.0" prefWidth="91.0" text="Résolution :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="closeC" layoutX="255.0" layoutY="4.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#showC" prefHeight="10.0" prefWidth="10.0" text="Button">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="https://i.imgur.com/rghb9rX.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="julia" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#juliaclick" prefHeight="55.0" prefWidth="137.0" style="-fx-background-color: #535353;" text="JULIA" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.15" radius="9.2575" width="18.03" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="mandelbrot" layoutX="137.0" layoutY="25.0" mnemonicParsing="false" onAction="#mandleclick" prefHeight="55.0" prefWidth="137.0" style="-fx-background-color: #535353;" text="MANDELBROT" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.15" radius="9.2575" width="18.03" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField alignment="CENTER" layoutX="137.0" layoutY="238.0" prefHeight="25.0" prefWidth="80.0" text="-2" fx:id="xmin" />
+                  <TextField fx:id="ymin" alignment="CENTER" layoutX="137.0" layoutY="275.0" prefHeight="25.0" prefWidth="80.0" text="2" />
+                  <TextField alignment="CENTER" layoutX="137.0" layoutY="314.0" prefHeight="25.0" prefWidth="80.0" text="2" fx:id="xmax" />
+                  <TextField fx:id="ymax" alignment="CENTER" layoutX="136.0" layoutY="353.0" prefHeight="25.0" prefWidth="80.0" text="-2" />
+                  <Label layoutX="72.0" layoutY="241.0" prefHeight="20.0" prefWidth="64.0" text="Xmin :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="278.0" prefHeight="20.0" prefWidth="64.0" text="Ymin :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="317.0" prefHeight="20.0" prefWidth="64.0" text="Xmax :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="74.0" layoutY="356.0" prefHeight="20.0" prefWidth="64.0" text="Ymax :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="Coulpane" layoutX="-1.0" layoutY="136.0" prefHeight="167.0" prefWidth="91.0" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="168.0" stroke="BLACK" strokeType="INSIDE" width="91.0">     <effect>
+                        <InnerShadow choke="0.63" color="#0d0d0d" height="68.44" radius="29.2725" width="50.65" />
+                     </effect></Rectangle>
+                  <Button fx:id="b1" ellipsisString=" " layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button" textFill="RED">
+                     <effect>
+                        <ColorInput height="25.0" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+	<Button fx:id="b2" ellipsisString=" " layoutX="53.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" paint="#4a00ff" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="b3" ellipsisString=" " layoutX="13.0" layoutY="52.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" paint="#f5ff00" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="b4" ellipsisString=" " layoutX="52.0" layoutY="52.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" paint="#2a7924" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="b5" ellipsisString=" " layoutX="13.0" layoutY="90.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" paint="#ff4d00" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="b6" ellipsisString=" " layoutX="52.0" layoutY="90.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" width="25.0">
+                           <paint>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="RED" />
+                                    <Stop color="#e4ff00" offset="0.17897065213097918" />
+                                    <Stop color="#00ff49" offset="0.3884741478058222" />
+                                    <Stop color="#2000ff" offset="0.6135008097325908" />
+                                    <Stop color="#ff00a6" offset="0.8100090848046766" />
+                                    <Stop color="#ffce00" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </paint></ColorInput>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="b7" ellipsisString=" " layoutX="12.0" layoutY="128.0" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="Button">
+                     <effect>
+                        <ColorInput height="25.0" paint="WHITE" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="b8" ellipsisString=" " layoutX="51.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#refreshColor" prefHeight="25.0" prefWidth="25.0" text="?" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="closeCoul" layoutX="81.0" layoutY="1.0" maxHeight="8.0" maxWidth="8.0" minHeight="8.0" minWidth="8.0" mnemonicParsing="false" onAction="#showCouleur" prefHeight="8.0" prefWidth="8.0" text="Button">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="https://i.imgur.com/Lne5yz3.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Button fx:id="reset" layoutX="571.0" layoutY="3.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="15.0" text="Button" visible="false">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="https://i.imgur.com/ERODgi1.png" />
+                     </source>
+                  </ImageInput>
+               </effect>
+            </Button>
+         </children></Pane>
+      <Button fx:id="couleur" contentDisplay="CENTER" ellipsisString="" layoutX="13.0" layoutY="88.0" mnemonicParsing="false" onAction="#showCouleur" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: #535353;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="https://i.imgur.com/crx3gdL.png" />
+               </source>
+            </ImageInput>
+         </effect></Button>
+      <Button fx:id="save" layoutX="15.0" layoutY="162.0" mnemonicParsing="false" onAction="#save" prefHeight="55.0" prefWidth="55.0" text="Button">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="https://i.imgur.com/f30yWAI.png" />
+               </source>
+            </ImageInput>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="random" layoutX="10.0" layoutY="226.0" mnemonicParsing="false" onAction="#random" prefHeight="55.0" prefWidth="55.0" text="Button">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="https://i.imgur.com/uMaSRUa.png" />
+               </source>
+            </ImageInput>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
